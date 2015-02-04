@@ -46,12 +46,12 @@ class Solvease_Roles_Capabilities_Admin {
         $this->plugin_caps = Solvease_Roles_Capabilities_User_Caps::solvease_roles_capabilities_caps();
 
         // reguster script
-        $this->solvease_roles_capabilities_register_script();
+        add_action('admin_enqueue_scripts', array($this, 'solvease_roles_capabilities_register_script'));
 
         // regester styles
-        $this->solvease_roles_capabilities_register_styles();
+        add_action('admin_enqueue_scripts', array($this, 'solvease_roles_capabilities_register_styles'));
 
-        $this->capability_table = new Solvease_Roles_Capabilities_Table($translation_domain, $this->plugin_caps );
+        $this->capability_table = new Solvease_Roles_Capabilities_Table($translation_domain, $this->plugin_caps);
     }
 
     private function solvease_roles_capabilities_menu_title() {
@@ -90,7 +90,7 @@ class Solvease_Roles_Capabilities_Admin {
     /**
      * register scripts
      */
-    private function solvease_roles_capabilities_register_script() {
+    public function solvease_roles_capabilities_register_script() {
 
         wp_register_script(
                 'solvease-roles-capabilities-validator-js', plugins_url('/js/jquery.validate.min.js', dirname(__FILE__)), array('jquery')
@@ -116,7 +116,7 @@ class Solvease_Roles_Capabilities_Admin {
     /**
      * register Stylesheet
      */
-    private function solvease_roles_capabilities_register_styles() {
+    public function solvease_roles_capabilities_register_styles() {
         wp_register_style('solvease-roles-capabilities-bootstrap-css', plugins_url('/css/bs-modal.css', dirname(__FILE__)));
         wp_register_style('solvease-roles-capabilities-custom-css', plugins_url('/css/custom.css', dirname(__FILE__)));
 

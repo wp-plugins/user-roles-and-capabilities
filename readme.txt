@@ -4,7 +4,7 @@ Donate link: https://solvease.com/donate/
 Tags: user roles, user capabilities, roles and capabilities, wordpress capabilities, wordpress user roles, manage capabilities, security, wordpress user security, permission system, wordpress user permission
 Requires at least: 3.5
 Tested up to: 4.1
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
